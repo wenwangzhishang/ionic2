@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>个人中心</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="loginOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{user?.avatar_url}}">
+      </ion-avatar>
+      <h2>{{user?.loginname}}</h2>
+      <p>积分 {{user?.score}}</p>
+      <p>注册日期 {{user?.create_at|date:'yyyy-MM-dd'}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      功能
+    </ion-list-header>
+    <ion-item>
+      <ion-row text-center>
+        <ion-col (click)="openPage('collects')">
+          <ion-icon color="primary" name="bookmark"></ion-icon>
+          收藏
+        </ion-col>
+        <ion-col (click)="openPage('messages')">
+          <ion-icon color="primary" name="chatboxes"></ion-icon>
+          消息
+          <ion-badge *ngIf="messageCount" color="danger">{{messageCount}}</ion-badge>
+        </ion-col>
+        <ion-col (click)="openPage('topics')">
+          <ion-icon color="primary" name="chatbubbles"></ion-icon>
+          话题
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      关于
+    </ion-list-header>
+    <ion-item>
+      当前版本
+      <ion-note item-right>{{versionNumber}}</ion-note>
+    </ion-item>
+    <ion-item>
+      联系作者
+      <ion-note item-right>963577494@qq.com</ion-note>
+    </ion-item>
+    <ion-item>
+      开源地址
+      <ion-note item-right onclick="window.open('https://github.com/zxj963577494/Ionic2-CNodeClub', '_blank', 'location=no')">Ionic2-CNodeClub</ion-note>
+    </ion-item>
+    <ion-item>
+      CNode社区
+      <ion-note item-right onclick="window.open('https://cnodejs.org', '_blank', 'location=no')">https://cnodejs.org</ion-note>
+    </ion-item>
+    <a ion-item text-center href="#/user/zxj963577494">
+      <ion-row text-center>
+        <ion-col>
+          &copy; @zxj963577494
+        </ion-col>
+      </ion-row>
+    </a>
+  </ion-list>
+</ion-content>

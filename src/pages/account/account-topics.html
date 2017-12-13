@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的话题</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      最近创建的话题
+    </ion-list-header>
+    <ion-item *ngIf="!topicsCount" >
+      <button clear ion-button full>暂无创建的话题</button>
+    </ion-item>
+    <ion-item *ngFor="let topic of user.recent_topics" (click)="openPage(topic.id)">
+      <ion-avatar item-left>
+        <img src="{{topic.author.avatar_url}}">
+      </ion-avatar>
+      <h2>{{topic.title}}</h2>
+      <p class="agotime">{{topic.last_reply_at|amAgoTime}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      最近参与的话题
+    </ion-list-header>
+    <ion-item *ngIf="!repliesCount">
+      <button clear ion-button full>暂无参与的话题</button>
+    </ion-item>
+    <ion-item *ngFor="let topic of user.recent_replies" (click)="openPage(topic.id)">
+      <ion-avatar item-left>
+        <img src="{{topic.author.avatar_url}}">
+      </ion-avatar>
+      <h2>{{topic.title}}</h2>
+      <p class="agotime">{{topic.last_reply_at|amAgoTime}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

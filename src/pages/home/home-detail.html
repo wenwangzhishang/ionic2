@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>CNode技术社区</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="share()">
+        <ion-icon name="share-alt"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start (click)="openUserPage(topic.author.loginname, $event)">
+        <img src="{{topic.author.avatar_url}}" />
+      </ion-avatar>
+      <h2>{{topic.author.loginname}}</h2>
+      <p>发布 <span>{{topic.create_at | amAgoTime}}</span> 最后回复 <span>{{topic.last_reply_at | amAgoTime}}</span></p>
+    </ion-item>
+
+    <ion-card-content>
+      <div [innerHTML]="topic.content| link">
+      </div>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          <ion-icon name='trending-up'></ion-icon>
+          {{topic.visit_count}} 浏览
+        </ion-note>
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          <ion-icon name='chatbubbles'></ion-icon>
+          {{topic.reply_count}} 评论
+        </ion-note>
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <button ion-button color="primary" (click)="collect(topic.id)" clear small icon-start>
+        <ion-icon name="bookmark"></ion-icon>
+        收藏
+      </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-list class="list-avatar-page">
+    <ion-item text-wrap *ngFor="let item of topic.replies;trackBy:item?.id">
+      <ion-avatar item-start (click)="openUserPage(item.author.loginname, $event)">
+        <img src="{{item.author.avatar_url}}" />
+      </ion-avatar>
+      <h2>{{item.author.loginname}}</h2>
+      <h3>{{item.create_at | amAgoTime}}</h3>
+      <p [innerHTML]="item.content| link"></p>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col align-self-center text-center>
+          <button ion-button color="primary" (click)="replieUps(item.id)" clear small icon-start>
+            <ion-icon name="thumbs-up"></ion-icon>
+            点赞
+          </button>
+        </ion-col>
+        <ion-col align-self-center text-center>
+          <button ion-button color="primary" (click)="reReply(item.id,item.author.loginname)" clear small icon-start>
+            <ion-icon name="undo"></ion-icon>
+            回复
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <form #replyForm="ngForm" (ngSubmit)="saveReply()">
+    <ion-toolbar>
+      <ion-input name="content" required [(ngModel)]="replyParams.content" type="text">
+      </ion-input>
+      <ion-buttons end>
+        <button type="submit" [disabled]="!replyForm.valid" color="primary" block ion-button>
+        提交
+      </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </form>
+</ion-footer>
