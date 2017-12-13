@@ -13,9 +13,9 @@ node.js v6⬆️，ionic cli v3.4.0⬆️, cordova v7.0.1(可尝试降级使用)
 
 0.npm install -g ionic cordova
 
-1.git clone https://github.com/zxj963577494/Ionic2-CNodeClub.git
+1.git clone https://github.com/wenwangzhishang/ionic2.git
 
-2.cd Ionic2-CNodeClub
+2.cd ionic2
 
 3.npm install
 
@@ -27,9 +27,9 @@ node.js v6⬆️，ionic cli v3.4.0⬆️, cordova v7.0.1(可尝试降级使用)
 
 0.npm install -g ionic cordova
 
-1.git clone https://github.com/zxj963577494/Ionic2-CNodeClub.git
+1.git clone https://github.com/wenwangzhishang/ionic2.git
 
-2.cd Ionic2-CNodeClub
+2.cd ionic2
 
 3.npm install
 
@@ -52,3 +52,5 @@ node.js v6⬆️，ionic cli v3.4.0⬆️, cordova v7.0.1(可尝试降级使用)
 ![我的消息](http://os9fefyck.bkt.clouddn.com/IMG_0192.PNG?imageView2/0/w/426/h/240)
 ![我的话题](http://os9fefyck.bkt.clouddn.com/IMG_0193.PNG?imageView2/0/w/426/h/240)
 
+#项目来源
+原地址：https://github.com/zxj963577494/Ionic2-CNodeClub.git
