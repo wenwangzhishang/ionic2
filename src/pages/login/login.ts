@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
       this.versionNumber = '请在手机中运行';
     });
   }
-
+//头像下的点击事件
   login() {
     let alert = this.alertCtrl.create({
       title: '扫码登录',

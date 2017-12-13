@@ -61,12 +61,13 @@ export class HomePage implements OnInit {
       data => this.topics = data.data
     );
   }
-
+   //上拉刷新
   doRefresh(refresher) {
     this.params.page = 1;
     setTimeout(() => {
       this.topicService.getTopics(this.params).subscribe(
         data => {
+          
           console.log(data);
           this.topics = data.data;
           refresher.complete();
@@ -74,7 +75,7 @@ export class HomePage implements OnInit {
       );
     }, 2000);
   }
-
+  //下拉加载
   doInfinite(infiniteScroll) {
     this.params.page++;
     setTimeout(() => {

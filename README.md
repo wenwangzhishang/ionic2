@@ -3,6 +3,8 @@
 这个项目是非自己全部开发，只是根据自己的理解做了些调整和自我学习。
 项目能够完全跑起来。亲测。后期会尽力的把理解注释进来。欢迎star。
 
+原地址：https://github.com/zxj963577494/Ionic2-CNodeClub.git
+
 基于Ionic的[CNode中文论坛](https://cnodejs.org/ "CNode中文论坛")客户端，采用最新的Ionic 3.4.2 + Angular 4 + TypeScript 2.3
 
 # 前置条件
@@ -53,4 +55,5 @@ node.js v6⬆️，ionic cli v3.4.0⬆️, cordova v7.0.1(可尝试降级使用)
 ![我的话题](http://os9fefyck.bkt.clouddn.com/IMG_0193.PNG?imageView2/0/w/426/h/240)
 
 #项目来源
+再次备注下原地址。谢谢。
 原地址：https://github.com/zxj963577494/Ionic2-CNodeClub.git
