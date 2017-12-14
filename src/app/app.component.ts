@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { HomePage } from '../pages/home/home';
+//提供页面的数据服务，并提供该页面的一些方法
 import { UtilService } from '../service/util.service';
 
 @Component({
@@ -17,7 +18,12 @@ export class AppComponent {
 
   tabs: Array<{ key: string, value: string, icon: string }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private iab: InAppBrowser, private utilService: UtilService) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    private iab: InAppBrowser,
+    private utilService: UtilService) {
     this.initializeApp();
     this.getTabs();
   }
