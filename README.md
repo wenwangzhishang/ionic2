@@ -57,3 +57,5 @@ node.js v6⬆️，ionic cli v3.4.0⬆️, cordova v7.0.1(可尝试降级使用)
 #项目来源
 再次备注下原地址。谢谢。
 原地址：https://github.com/zxj963577494/Ionic2-CNodeClub.git
+
+![Image text](https://github.com/wenwangzhishang/ionic2/blob/master/69631178247115342.jpg)
