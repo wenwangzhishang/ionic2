@@ -1,3 +1,8 @@
+
+/**
+ * 定义类
+ */
+
 export class PostRepliesRequest {
   accesstoken: string;
   content: string;

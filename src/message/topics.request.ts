@@ -1,3 +1,6 @@
+/**
+ * 定义类
+ */
 export class GetTopicsRequest {
   page: number;
   tab: string;

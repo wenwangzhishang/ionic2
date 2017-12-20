@@ -95,9 +95,11 @@ export class HomePage implements OnInit {
   }
 
   openPage(id: string) {
+    console.log('open')
     this.appCtrl.getRootNav().push(HomeDetailPage, { id: id });
   }
   openUserPage(loginname: string, event) {
+    console.log('opern user page')
     this.appCtrl.getRootNav().push(UserPage, { loginname: loginname });
     event.stopPropagation();
   }

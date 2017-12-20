@@ -1,3 +1,8 @@
+
+/**
+ * 定义信息类
+ */
+
 export class GetMessageCountRequest {
   accesstoken: string;
 }

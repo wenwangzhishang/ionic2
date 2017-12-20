@@ -42,6 +42,7 @@ export class AppComponent {
   }
 
   openPage(key: string) {
+    //将页面item相关参数传出
     this.nav.setRoot(HomePage, { tab: key });
     console.log(key)
   }
